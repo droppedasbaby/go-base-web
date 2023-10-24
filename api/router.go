@@ -4,8 +4,8 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	httpSwagger "github.com/swaggo/http-swagger"
+	"go-base-web/utils"
 	"go.uber.org/zap"
-	"idserver/utils"
 	"net/http"
 )
 

@@ -1,4 +1,4 @@
-module idserver
+module go-base-web
 
 go 1.19
 

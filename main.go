@@ -2,9 +2,9 @@ package main
 
 import (
 	"context"
+	"go-base-web/api"
+	"go-base-web/utils"
 	"go.uber.org/zap"
-	"idserver/api"
-	"idserver/utils"
 	"sync"
 	"syscall"
 )
