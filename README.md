@@ -7,14 +7,20 @@
 
 ### Features
 - Graceful shutdown
-- Pre-configured logging using [zap](https://pkg.go.dev/go.uber.org/zap)
-- HTTP request routing with [chi](https://pkg.go.dev/github.com/go-chi/chi/v5)
-- Middleware support
+- API documentation support using [http-swagger](https://github.com/swaggo/http-swagger)
+- Pre-configured logging using [zap](https://github.com/uber-go/zap)
+- HTTP request routing with [chi](https://github.com/go-chi/chi)
+- Middleware support using chi
+    - Includes logging
+    - Include recovery
+    - Adding Request ID
+    - Adding Request IP
 
 ### Prerequisites
 - Go 1.18 or higher due to Generics, can be used with 1.16 if you don't plan on using Generics
-- [zap](https://pkg.go.dev/go.uber.org/zap) for logging
-- [chi](https://pkg.go.dev/github.com/go-chi/chi/v5) for routing
+- [zap](https://github.com/uber-go/zap) for logging
+- [chi](https://github.com/go-chi/chi) for routing
+- [http-swagger](https://github.com/swaggo/http-swagger) for documentation
 
 ## Usage
 
