@@ -28,7 +28,7 @@
     ```
 3. Build the project:
     ```sh
-        go build -o mywebapp
+        go build -o go-base-web
     ```
 
 ## Usage
