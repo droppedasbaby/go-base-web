@@ -1,4 +1,4 @@
-package utils
+package server
 
 import (
 	"context"
@@ -7,17 +7,11 @@ import (
 	"go.uber.org/zap"
 	"net/http"
 	"sync"
-	"time"
 )
 
-const (
-	ConnReadIdleTimeoutS  = 10 * time.Second
-	ConnWriteIdleTimeoutS = 10 * time.Second
-)
-
-// RunServer runs the http server used to accept and handle requests.
+// ManageServerLifecycle runs the http server used to accept and handle requests.
 // The requests are routed to the correct handler.
-func RunServer(ctx context.Context, logger *zap.Logger, addr string, r *chi.Mux) {
+func ManageServerLifecycle(ctx context.Context, logger *zap.Logger, addr string, r *chi.Mux) {
 	wg := sync.WaitGroup{}
 
 	logger.Info("Starting server on:", zap.String("addr", addr))
@@ -27,7 +21,7 @@ func RunServer(ctx context.Context, logger *zap.Logger, addr string, r *chi.Mux)
 	go func() {
 		defer wg.Done()
 		if err := server.ListenAndServe(); err != nil {
-			if err == http.ErrServerClosed {
+			if errors.Is(err, http.ErrServerClosed) {
 				logger.Info("Server no longer listening.")
 			} else {
 				logger.Error("Failed to start server.", zap.Error(err))

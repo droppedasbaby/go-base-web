@@ -20,6 +20,6 @@ func WaitForShutdown(ctx context.Context, logger *zap.Logger) error {
 		return nil
 	case <-ctx.Done():
 		logger.Info("Context cancelled, no longer waiting for shutdown.")
-		return fmt.Errorf("WaitForShutdown: context cancelled: %w")
+		return fmt.Errorf("WaitForShutdown: context cancelled")
 	}
 }
