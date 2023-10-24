@@ -37,14 +37,6 @@
         go build -o go-base-web
     ```
 
-## Usage
-1. Start the server:
-    ```sh
-    ./mywebapp
-    ```
-
-2. Navigate to `http://localhost:8000` in your web browser to interact with the application.
-
 ## Configuration
 The application listens on port 8000 by default. You can change this by editing the `addr` variable in `main.go`.
 
