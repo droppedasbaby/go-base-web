@@ -5,12 +5,17 @@ import (
 	"go-base-web/api"
 	"go-base-web/utils"
 	"go.uber.org/zap"
+	"os"
 	"sync"
 	"syscall"
 )
 
 func main() {
-	addr := ":8000"
+	addr := os.Getenv("SERVER_ADDR")
+	if addr == "" {
+		addr = ":8000"
+	}
+
 	logger, err := zap.NewProduction(zap.WithCaller(false))
 	utils.PanicIfError(err)
 	defer utils.PanicIfError(logger.Sync(), syscall.ENOTTY)

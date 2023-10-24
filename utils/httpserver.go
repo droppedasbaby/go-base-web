@@ -40,7 +40,7 @@ func RunServer(ctx context.Context, logger *zap.Logger, addr string, r *chi.Mux)
 	err := server.Shutdown(ctx)
 
 	if err != nil && !errors.Is(err, http.ErrServerClosed) {
-		logger.Error("Error while shutting down server. %w", zap.Error(err))
+		logger.Error("Error while shutting down server", zap.Error(err))
 	}
 
 	wg.Wait()

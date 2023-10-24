@@ -24,7 +24,6 @@ func Logger(l *zap.Logger) func(next http.Handler) http.Handler {
 					zap.String("method", r.Method),
 					zap.String("path", r.URL.Path),
 					zap.Int("status", ww.Status()),
-					zap.Duration("duration", s),
 					zap.String("prettyDuration", s.String()),
 				)
 			}()
