@@ -22,7 +22,10 @@ It incorporates best practices and idiomatic Go code.
 - [http-swagger](https://github.com/swaggo/http-swagger) for api-docs.
 
 ## Usage
+### Option A:
+Use the **template repository** feature on GitHub to create a new repository from this template.
 
+### Option B:
 1. Clone this repository:
     ```sh
         git clone https://github.com/GrewalAS/go-base-web.git my-project
