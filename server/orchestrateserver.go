@@ -17,9 +17,11 @@ const (
 )
 
 func OrchestrateServer(wg *sync.WaitGroup, logger *zap.Logger) {
-	addr := os.Getenv("SERVER_ADDR")
+	addr := os.Getenv("PORT")
 	if addr == "" {
 		addr = ":8000"
+	} else {
+		addr = ":" + addr
 	}
 
 	var err error
@@ -41,9 +43,6 @@ func OrchestrateServer(wg *sync.WaitGroup, logger *zap.Logger) {
 	}()
 
 	wg.Add(1)
-	go func() {
-		defer wg.Done()
-		ManageServerLifecycle(ctx, logger, addr, r)
-		utils.PanicIfError(err)
-	}()
+	defer wg.Done()
+	ManageServerLifecycle(ctx, logger, addr, r)
 }

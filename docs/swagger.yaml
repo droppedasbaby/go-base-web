@@ -1,0 +1,13 @@
+info:
+  contact: {}
+paths:
+  /v1/test:
+    get:
+      description: Returns a simple 'Hello, world!' message
+      responses:
+        "200":
+          description: Hello, world!
+          schema:
+            type: string
+      summary: Test endpoint
+swagger: "2.0"

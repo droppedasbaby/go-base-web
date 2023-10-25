@@ -6,6 +6,8 @@ import (
 
 // restApiRoutes routes the requests to the correct handler.
 func restApiRoutes(r chi.Router) {
-	// TODO: place api routes here
-	r.Route("/v1", func(r chi.Router) {})
+	// TODO: place api routes here, remove the test route
+	r.Route("/v1", func(r chi.Router) {
+		r.Get("/test", getTestOperation)
+	})
 }

@@ -32,13 +32,34 @@
     ```sh
         cd go-base-web
     ```
-3. Build the project:
+3. Place your api routes inside:
     ```sh
-        go build -o go-base-web
+        api/routes.go
     ```
+    Some example routes are already provided.
+4. Place your operation handlers inside:
+    ```sh
+        api/*operations.go
+    ```
+    Some example handlers are already provided in: `api/testoperations.go`
+
+## Swagger
+Swagger documentation is automatically generated and served at `/swagger/index.html` by default.
+
+You can change the path by editing the routes in `route/buildTopLevelRoutes.go`:
+```go
+    // ...
+    r.Get("/docs/*", func(w http.ResponseWriter, r *http.Request) {
+        http.StripPrefix("/docs", http.FileServer(http.Dir("./docs"))).ServeHTTP(w, r)
+    })
+    r.Get("/swagger/*", httpSwagger.Handler(
+        httpSwagger.URL("/docs/swagger.json"),
+    ))
+    // ...
+```
 
 ## Configuration
-The application listens on port 8000 by default. You can change this by editing the `addr` variable in `main.go`.
+The application listens on port 8000 by default. You can change this by editing the `addr` variable in `orchestrateserver.go` OR by setting the `PORT` environment variable.
 
 ## Contributing
 I'm relatively new to Go, so if you have any suggestion, please feel free to submit a pull request or create an issue.

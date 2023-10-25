@@ -29,9 +29,12 @@ func GetRouter(logger *zap.Logger) *chi.Mux {
 // buildTopLevelRoutes builds the top level routes for the api.
 // This includes the swagger routes, and the basic api routes.
 func buildTopLevelRoutes(r *chi.Mux) {
-	r.HandleFunc("/swagger", func(w http.ResponseWriter, r *http.Request) {
-		http.Redirect(w, r, r.RequestURI+"/", http.StatusMovedPermanently)
+	r.Get("/docs/*", func(w http.ResponseWriter, r *http.Request) {
+		http.StripPrefix("/docs", http.FileServer(http.Dir("./docs"))).ServeHTTP(w, r)
 	})
-	r.Get("/swagger*", httpSwagger.Handler())
+	r.Get("/swagger/*", httpSwagger.Handler(
+		httpSwagger.URL("/docs/swagger.json"),
+	))
+
 	r.Route("/api", restApiRoutes)
 }
