@@ -23,7 +23,8 @@ It incorporates best practices and idiomatic Go code.
 
 ## Usage
 ### Option A:
-Use the **template repository** feature on GitHub to create a new repository from this template.
+Use the [**template repository**](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) 
+feature on GitHub to create a new repository from this template.
 1. Click on the `Use this template` button on the top right of this page.
 2. Click on `Create repository from template`.
 
