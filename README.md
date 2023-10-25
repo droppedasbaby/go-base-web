@@ -6,7 +6,7 @@ It incorporates best practices and idiomatic Go code.
 
 ### Features
 - Graceful shutdown
-- API documentation support using [http-swagger](https://github.com/swaggo/http-swagger)
+- API docs support using [http-swagger](https://github.com/swaggo/http-swagger)
 - Pre-configured logging using [zap](https://github.com/uber-go/zap)
 - HTTP request routing with [chi](https://github.com/go-chi/chi)
 - Middleware support using chi
