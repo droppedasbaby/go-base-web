@@ -1,8 +1,6 @@
 # go-base-web
 
 ### Overview
-**WIP**
-
 `go-base-web` is a foundational Go web project aimed at providing a solid starting point for building scalable and maintainable web applications. It incorporates best practices and idiomatic Go code.
 
 ### Features
@@ -12,25 +10,25 @@
 - HTTP request routing with [chi](https://github.com/go-chi/chi)
 - Middleware support using chi
     - Includes logging
-    - Include recovery
-    - Adding Request ID
-    - Adding Request IP
+    - Includes recovery
+    - Includes Request ID
+    - Includes Request IP
 
 ### Prerequisites
 - Go 1.18 or higher due to Generics, can be used with 1.16 if you don't plan on using Generics
 - [zap](https://github.com/uber-go/zap) for logging
 - [chi](https://github.com/go-chi/chi) for routing
-- [http-swagger](https://github.com/swaggo/http-swagger) for documentation
+- [http-swagger](https://github.com/swaggo/http-swagger) for api-docs.
 
 ## Usage
 
 1. Clone this repository:
     ```sh
-        git clone https://github.com/yourusername/go-base-web.git
+        git clone https://github.com/GrewalAS/go-base-web.git my-project
     ```
 2. Navigate into the project directory:
     ```sh
-        cd go-base-web
+        cd my-project
     ```
 3. Place your api routes inside:
     ```sh
@@ -43,8 +41,8 @@
     ```
     Some example handlers are already provided in: `api/testoperations.go`
 
-## Swagger
-Swagger documentation is automatically generated and served at `/swagger/index.html` by default.
+## Swagger/API Docs
+Swagger/API docs are automatically generated and served at `/swagger/index.html` by default.
 
 You can change the path by editing the routes in `route/buildTopLevelRoutes.go`:
 ```go
@@ -59,7 +57,7 @@ You can change the path by editing the routes in `route/buildTopLevelRoutes.go`:
 ```
 
 ## Configuration
-The application listens on port 8000 by default. You can change this by editing the `addr` variable in `orchestrateserver.go` OR by setting the `PORT` environment variable.
+The application listens on port `8000` by default. You can change this by editing the `addr` variable in `orchestrateserver.go` OR by setting the `PORT` environment variable.
 
 ## Contributing
 I'm relatively new to Go, so if you have any suggestion, please feel free to submit a pull request or create an issue.
