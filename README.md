@@ -12,8 +12,8 @@ It incorporates best practices and idiomatic Go code.
 - Middleware support using chi
     - Includes logging
     - Includes recovery
-    - Includes Request ID
-    - Includes Request IP
+    - Includes Request ID using chi's middleware
+    - Includes Request IP using chi's middleware
 
 ### Prerequisites
 - Go 1.18 or higher due to Generics, can be used with 1.16 if you don't plan on using Generics
