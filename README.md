@@ -1,7 +1,8 @@
 # go-base-web
 
 ### Overview
-`go-base-web` is a foundational Go web project aimed at providing a solid starting point for building scalable and maintainable web applications. It incorporates best practices and idiomatic Go code.
+`go-base-web` is a template aimed at providing a solid starting point for building web applications. 
+It incorporates best practices and idiomatic Go code.
 
 ### Features
 - Graceful shutdown
@@ -57,7 +58,9 @@ You can change the path by editing the routes in `route/buildTopLevelRoutes.go`:
 ```
 
 ## Configuration
-The application listens on port `8000` by default. You can change this by editing the `addr` variable in `orchestrateserver.go` OR by setting the `PORT` environment variable.
+The application listens on port `8000` by default. 
+You can change this by editing the `addr` variable in `orchestrateserver.go` OR by setting the `PORT` environment 
+variable.
 
 ## Contributing
 I'm relatively new to Go, so if you have any suggestion, please feel free to submit a pull request or create an issue.
