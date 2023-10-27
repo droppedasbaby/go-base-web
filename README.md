@@ -19,6 +19,7 @@ It incorporates best practices and idiomatic Go code.
 - Go 1.18 or higher due to Generics, can be used with 1.16 if you don't plan on using Generics
 - [zap](https://github.com/uber-go/zap) for logging
 - [chi](https://github.com/go-chi/chi) for routing
+- [chi](https://github.com/go-chi/chi) for middleware
 - [http-swagger](https://github.com/swaggo/http-swagger) for api-docs.
 
 ## Usage
