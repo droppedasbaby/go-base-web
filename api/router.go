@@ -1,16 +1,18 @@
 package api
 
 import (
+	"net/http"
+
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	httpSwagger "github.com/swaggo/http-swagger"
-	"go-base-web/utils"
 	"go.uber.org/zap"
-	"net/http"
+
+	"go-base-web/utils"
 )
 
 // GetRouter returns a chi router with the correct routes.
-// Both for swagger router and normal api routes
+// Both for swagger router and normal api routes.
 func GetRouter(logger *zap.Logger) *chi.Mux {
 	r := chi.NewRouter()
 
@@ -36,5 +38,5 @@ func buildTopLevelRoutes(r *chi.Mux) {
 		httpSwagger.URL("/docs/swagger.json"),
 	))
 
-	r.Route("/api", restApiRoutes)
+	r.Route("/api", restAPIRoutes)
 }

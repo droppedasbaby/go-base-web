@@ -1,8 +1,9 @@
 package main
 
 import (
-	"go-base-web/server"
 	"sync"
+
+	"go-base-web/server"
 )
 
 // main starts/runs the server.

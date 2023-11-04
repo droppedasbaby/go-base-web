@@ -3,10 +3,11 @@ package utils
 import (
 	"context"
 	"fmt"
-	"go.uber.org/zap"
 	"os"
 	"os/signal"
 	"syscall"
+
+	"go.uber.org/zap"
 )
 
 // WaitForShutdown waits until the SIGINT signal is received or the context is cancelled.

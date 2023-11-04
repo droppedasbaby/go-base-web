@@ -2,13 +2,15 @@ package server
 
 import (
 	"context"
-	"go-base-web/api"
-	"go-base-web/utils"
-	"go.uber.org/zap"
 	"os"
 	"sync"
 	"syscall"
 	"time"
+
+	"go.uber.org/zap"
+
+	"go-base-web/api"
+	"go-base-web/utils"
 )
 
 const (
@@ -37,8 +39,8 @@ func OrchestrateServer(wg *sync.WaitGroup, logger *zap.Logger) {
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		err := utils.WaitForShutdown(ctx, logger)
-		utils.PanicIfError(err, context.Canceled)
+		shErr := utils.WaitForShutdown(ctx, logger)
+		utils.PanicIfError(shErr, context.Canceled)
 		cancel()
 	}()
 

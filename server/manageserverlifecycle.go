@@ -3,16 +3,22 @@ package server
 import (
 	"context"
 	"errors"
+	"net/http"
+
 	"github.com/go-chi/chi/v5"
 	"go.uber.org/zap"
-	"net/http"
 )
 
 // ManageServerLifecycle runs the http server used to accept and handle requests.
 // The requests are routed to the correct handler.
 func ManageServerLifecycle(ctx context.Context, logger *zap.Logger, addr string, r *chi.Mux) {
 	logger.Info("Starting server on:", zap.String("addr", addr))
-	server := &http.Server{Addr: addr, Handler: r, ReadTimeout: ConnReadIdleTimeoutS, WriteTimeout: ConnWriteIdleTimeoutS}
+	server := &http.Server{
+		Addr:         addr,
+		Handler:      r,
+		ReadTimeout:  ConnReadIdleTimeoutS,
+		WriteTimeout: ConnWriteIdleTimeoutS,
+	}
 
 	go func() {
 		if err := server.ListenAndServe(); err != nil {

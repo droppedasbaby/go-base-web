@@ -1,10 +1,11 @@
 package utils
 
 import (
-	"github.com/go-chi/chi/v5/middleware"
-	"go.uber.org/zap"
 	"net/http"
 	"time"
+
+	"github.com/go-chi/chi/v5/middleware"
+	"go.uber.org/zap"
 )
 
 // Logger is a middleware that logs the start and end of each request, along
