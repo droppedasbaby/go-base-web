@@ -1,0 +1,14 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignoreWords": ["golangci", "orchestrateserver", "swaggo", "testoperations"],
+  "words": ["grewal"],
+  "ignorePaths": [
+    "cspell.json",
+    ".golangci.yml",
+    "cspell.json",
+    "go.mod",
+    "go.sum"
+  ],
+  "flagWords": []
+}
